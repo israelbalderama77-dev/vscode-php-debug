@@ -41,7 +41,7 @@ jobs:
       - name: Build VS Code extension
         run: npm run build
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
           php-version: ${{ matrix.php }}
           extensions: ${{ matrix.xdebug }}
@@ -60,7 +60,7 @@ jobs:
       - name: Generate coverage report
         run: ./node_modules/.bin/nyc report --reporter=json
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
   release:
